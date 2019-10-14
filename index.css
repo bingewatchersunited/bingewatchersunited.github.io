@@ -1,5 +1,5 @@
 :root {
-    --background: #30308a;
+    --background: #30305a;
     --header: #46467f;
     --nav-border: #2a2a4b;
     --text: #a3a3a3;
@@ -13,11 +13,15 @@ body {
 }
 
 #bwu-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#bwu-header__container {
     background-color: var(--header);
     border-bottom: 1px solid var(--nav-border);
     height: 60px;
     padding: 4px;
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
 }
