@@ -4,6 +4,7 @@
     --nav-border: #2a2a4b;
     --text: #a3a3a3;
     --search: #242424;
+    --search-border: #343434;
     --search-text: #bcbcbc;
 }
 
@@ -80,4 +81,22 @@ body {
     margin: 0 4px;
     color: var(--text);
     padding: 8px 16px;
+}
+
+#bwu-search {
+    background-color: var(--search);
+    border: 1px solid var(--search-border);
+    border-radius: 5px;
+    padding: 4px 8px;
+}
+
+#bwu-search__label {
+    color: var(--search-text);
+}
+
+#bwu-search__input {
+    color: var(--search-text);
+    border: none;
+    background: none;
+    font-family: inherit;
 }
