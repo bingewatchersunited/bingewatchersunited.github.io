@@ -40,6 +40,8 @@ body {
 #bwu-logo {
     height: 55px;
     width: 55px;
+    position: relative;
+    top: 3px;
 }
 
 #bwu-heading,
@@ -58,12 +60,15 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    position: relative;
+    top: -10px;
 }
 
 #bwu-nav > li {
     display: inline-block;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 #bwu-nav > li > a {
