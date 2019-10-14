@@ -38,12 +38,34 @@ body {
 }
 
 #bwu-logo {
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
 }
 
 #bwu-heading,
 #bwu-navigation,
 #bwu-search {
     display: inline-block;
+}
+
+#bwu-nav {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#bwu-nav > li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#bwu-nav > li > a {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 16pt;
+    font-weight: bold;
+    margin: 0 4px;
+    padding: 8px 16px;
 }
