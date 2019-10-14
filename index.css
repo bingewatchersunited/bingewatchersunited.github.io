@@ -63,7 +63,7 @@ body {
     padding: 0;
     position: relative;
     top: -16px;
-    min-width: 400px;
+    min-width: 500px;
 }
 
 #bwu-nav > li {
@@ -92,7 +92,7 @@ body {
     position: relative;
     text-transform: uppercase;
     top: -16px;
-    min-width: 300px;
+    min-width: 320px;
 }
 
 #bwu-search__label {
@@ -109,5 +109,5 @@ body {
     font-family: inherit;
     text-transform: inherit;
     padding: 4px 8px;
-    width: 80%;
+    width: 70%;
 }
