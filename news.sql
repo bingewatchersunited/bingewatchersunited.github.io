@@ -1,4 +1,4 @@
-CREATE TABLE bwu_news IF NOT EXISTS (
+CREATE TABLE IF NOT EXISTS bwu.news (
     id INT PRIMARY KEY IDENTITY (1,1),
     news_name VARCHAR (50) NOT NULL,
     news_text VARCHAR (1000) NOT NULL,
