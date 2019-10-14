@@ -1,6 +1,6 @@
 :root {
     --background: #30305a;
-    --header: #46467f;
+    --header: #16163f;
     --nav-border: #2a2a4b;
     --text: #a3a3a3;
     --search: #242424;
@@ -12,10 +12,21 @@ body {
     font-family: "Montserrat", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.clearfix:after,
+.clearfix::after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
 #bwu-header {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
 }
 
 #bwu-header__container {
@@ -24,4 +35,15 @@ body {
     height: 60px;
     padding: 4px;
     position: relative;
+}
+
+#bwu-logo {
+    height: 30px;
+    width: 30px;
+}
+
+#bwu-heading,
+#bwu-navigation,
+#bwu-search {
+    display: inline-block;
 }
