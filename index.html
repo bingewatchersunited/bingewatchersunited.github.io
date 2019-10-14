@@ -15,7 +15,9 @@
             <header class="bwu-header" id="bwu-header">
 				<div class="bwu-header__container" id="bwu-header__container">
 					<h1 class="bwu-heading" id="bwu-heading">
-						<img class="bwu-logo" id="bwu-logo" src="BWULogo.png" alt="Binge Watchers United" />
+						<a href="index.html" class="bwu-logo__link" id="bwu-logo__link">
+							<img class="bwu-logo" id="bwu-logo" src="BWULogo.png" alt="Binge Watchers United" />
+						</a>
 					</h1>
 					<nav class="bwu-navigation" id="bwu-navigation">
 						<ul class="bwu-nav" id="bwu-nav">
@@ -41,5 +43,28 @@
             <main class="bwu-main__content" id="bwu-main__content"></main>
             <footer class="bwu-footer" id="bwu-footer"></footer>
         </div>
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+			https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+
+		<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyBI8PEExjce6kfSYfUmLZpIdi8RYvFAhuU",
+			authDomain: "binge-watchers-united.firebaseapp.com",
+			databaseURL: "https://binge-watchers-united.firebaseio.com",
+			projectId: "binge-watchers-united",
+			storageBucket: "binge-watchers-united.appspot.com",
+			messagingSenderId: "151111075536",
+			appId: "1:151111075536:web:f2c9d6631da73ec939c0d5",
+			measurementId: "G-4S61PLKS15"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+		</script>
 	</body>
 </html>
