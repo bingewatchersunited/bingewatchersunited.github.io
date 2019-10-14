@@ -1,0 +1,23 @@
+:root {
+    --background: #30308a;
+    --header: #46467f;
+    --nav-border: #2a2a4b;
+    --text: #a3a3a3;
+    --search: #242424;
+    --search-text: #bcbcbc;
+}
+
+body {
+    background-color: var(--background);
+    font-family: "Montserrat", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#bwu-header {
+    background-color: var(--header);
+    border-bottom: 1px solid var(--nav-border);
+    height: 60px;
+    padding: 4px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
