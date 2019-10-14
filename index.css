@@ -38,14 +38,19 @@ body {
 }
 
 #bwu-logo {
-    height: 50px;
-    width: 50px;
+    height: 55px;
+    width: 55px;
 }
 
 #bwu-heading,
 #bwu-navigation,
 #bwu-search {
     display: inline-block;
+}
+
+#bwu-heading {
+    padding: 0;
+    margin: 0;
 }
 
 #bwu-nav {
@@ -68,5 +73,6 @@ body {
     font-size: 16pt;
     font-weight: bold;
     margin: 0 4px;
+    color: var(--text);
     padding: 8px 16px;
 }
