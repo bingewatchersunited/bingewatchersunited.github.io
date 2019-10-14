@@ -3,7 +3,7 @@
 	$navigation = (object)[
 		"news" => "News"
 	];
-	$description = "Binge Watchers United is an organization that was created to allow students to show appreciation for television series, films, and streaming services by having fun discussions";
+	$description = "Binge Watchers United is an organization that was created to allow students to show appreciation for television series, films, and streaming services by having fun discussions.";
 ?>
 <!DOCTYPE HTML>
 <html class="bwu-site clearfix" id="bwu-site">
