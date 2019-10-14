@@ -61,7 +61,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    top: -10px;
+    top: -15px;
 }
 
 #bwu-nav > li {
@@ -75,7 +75,7 @@ body {
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 16pt;
+    font-size: 12pt;
     font-weight: bold;
     margin: 0 4px;
     color: var(--text);
