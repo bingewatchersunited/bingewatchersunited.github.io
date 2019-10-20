@@ -1,16 +1,33 @@
 :root {
-    --bwu_background: #30305a;
-    --bwu_header: #16163f;
-    --bwu_nav-border: #2a2a4b;
-    --bwu_text: #a3a3a3;
-    --bwu_search: #242424;
-    --bwu_search-border: #343434;
-    --bwu_search-text: #bcbcbc;
+    /* Base theme */
+    --bwu-theme_background: #30305a;
+    --bwu-theme_header: #543400;
+    --bwu-theme_nav-border: #926622;
+    --bwu-theme_text: #a3a3a3;
+    --bwu-theme_search: #111A2B;
+    --bwu-theme_search-border: #343434;
+    --bwu-theme_search-text: #bcbcbc;
+    --bwu-theme_section: #b87923;
+    --bwu-theme_link: #567aff;
+    /* Katsuragi */
+    --katsuragi-theme_background: #343667;
+    --katsuragi-theme_header: #1a1b33;
+    --katsuragi-theme_nav-border:  #212241;
+    --katsuragi-theme_text: #e0e0e0;
+    --katsuragi-theme_search: #cccccc;
+    --katsuragi-theme_search-border: transparent;
+    --katsuragi-theme_search-text: #444444;
+    --katsuragi-theme_section: #4c4e7e;
+    --katsuragi-theme_link: #cccccc;
 }
 
 body {
-    background-color: var(--background);
+    background-color: var(--bwu-theme_background);
     font-family: "Montserrat", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body.katsuragi {
+    background-color: var(--katsuragi-theme_background);
 }
 
 .clearfix:after,
@@ -22,3 +39,45 @@ body {
     clear: both;
 }
 
+#bwu-header {
+    position: relative;
+    height: 80px;
+    left: 0;
+    top: 0;
+}
+
+#bwu-header__container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--bwu-theme_header);
+    border-bottom: 2px solid var(--bwu-theme_nav-border);
+    height: inherit;
+}
+
+.katsuragi #bwu-header__container {
+    background-color: var(--katsuragi-theme_header);
+    border-bottom-color: var(--katsuragi-theme_nav-border);
+}
+
+#bwu-heading {
+    display: inline-block;
+    height: inherit;
+    overflow: hidden;
+    vertical-align: middle;
+    max-height: 80px;
+    max-width: 80px;
+}
+
+#bwu-heading #bwu-logo__link {
+    display: inline-block;
+    margin: 0;
+    max-height: 80px;
+    padding: 0;
+}
+
+#bwu-heading #bwu-logo_link > #bwu-logo {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+}
