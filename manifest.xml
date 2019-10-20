@@ -1,0 +1,10 @@
+<bwu>
+    <short_name>BWU</short_name>
+    <start_url>index.html</start_url>
+    <commands>
+        <command name="home">
+            <key>Ctrl+Alt+K</key>
+            <description>This key redirects the user to the home page.</description>
+        </command>
+    </commands>
+</bwu>
