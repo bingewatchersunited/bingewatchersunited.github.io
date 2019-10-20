@@ -2,7 +2,7 @@
     /* Base theme */
     --bwu-theme_background: #30305a;
     --bwu-theme_header: #926622;
-    --bwu-theme_nav-border: #543400;
+    --bwu-theme_nav-border: #80540e;
     --bwu-theme_nav-text: #1a1f40;
     --bwu-theme_text: #a3a3a3;
     --bwu-theme_search: #111A2B;
@@ -69,7 +69,7 @@ body.katsuragi {
     overflow: hidden;
     vertical-align: middle;
     max-height: 80px;
-    max-width: 80px;
+    width: 85px;
     padding: 0;
     margin: 0;
 }
@@ -148,6 +148,7 @@ body.katsuragi {
     display: inline-block;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 #bwu-nav > .bwu-nav__item > .bwu-nav__subnav > .bwu-subnav > .bwu-subnav__item > .bwu-subnav__link {
