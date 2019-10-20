@@ -3,6 +3,7 @@
     --bwu-theme_background: #30305a;
     --bwu-theme_header: #543400;
     --bwu-theme_nav-border: #926622;
+    --bwu-theme_nav-text: #1a1f40;
     --bwu-theme_text: #a3a3a3;
     --bwu-theme_search: #111A2B;
     --bwu-theme_search-border: #343434;
@@ -13,6 +14,7 @@
     --katsuragi-theme_background: #343667;
     --katsuragi-theme_header: #1a1b33;
     --katsuragi-theme_nav-border:  #212241;
+    --katsuragi-theme_nav-text: #ae9ebe;
     --katsuragi-theme_text: #e0e0e0;
     --katsuragi-theme_search: #cccccc;
     --katsuragi-theme_search-border: transparent;
@@ -108,5 +110,20 @@ body.katsuragi {
 }
 
 #bwu-nav > .bwu-nav__item {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
     height: 100%;
+}
+
+#bwu-nav > .bwu-nav__item > .bwu-nav__link {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    font-weight: bold;
+    color: var(--bwu-theme_nav-text);
+}
+
+.katsuragi #bwu-nav > #bwu-nav__item > .bwu-nav__link {
+    color: var(--katsuragi-theme_nav-text);
 }
