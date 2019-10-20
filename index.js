@@ -1,76 +1,30 @@
-(function(global){
-    /**
-     * @function safeJSONParse
-     * @param {String|String[]} result
-     */
-    function safeJSONParse(result){
-        if (!arguments.length) return null;
-
-        if (Array.isArray(result)){
-            result = result.map((string) => safeJSONParse(string));
-        } else {
-            try {
-                result = JSON.parse(result);
-            } catch (ignore){}
-        }
-
-        return result;
+(function(window){
+    function BWUNavigation(){
+        this.$navigation = $("#bwu-navigation");
+        this.$activeElem = null;
     }
 
-    function noop(){}
+    BWUNavigation.prototype.constructor = BWUNavigation;
 
-    function getNewsReq(type){
-        var progress = noop;
+    (function(){
+        this.add = function(item){
+            if (!this.$navigation.length) return;
 
-        if (arguments.length === 2 && typeof arguments[1] === "function") progress = arguments[1];
-
-        return new Promise((resolve, reject) => {
-            var xhr = new XMLHttpRequest(), url = getUrl("news.php", { type: type });
-
-            xhr.open("GET", url, true);
-
-            xhr.addEventListener("progress", progress);
-
-            xhr.addEventListener("readystatechange", function(){
-                if (this.readyState === this.DONE){
-                    if (this.status === 200){
-                        var response;
-                        if ("response" in this) response = this.response;
-                        else response = safeJSONParse(this.responseText);
-                        resolve(response);
-                    } else reject();
-                }
-            });
-
-            xhr.send(null);
-        });
-    }
-
-    /**
-     * @function getNews
-     * @param {String|Number} type
-     */
-    async function getNews(type){
-        if (!arguments.length) type = "main";
-
-        if (typeof type === "number") type = BWU.newsType[type];
-
-        var news = await getNewsReq(type);
-
-        if (typeof news !== "object") return {};
-
-        return news;
-    }
-
-    class BWUNews {
-        constructor(){
-            this.items = [];
-            this.now = new Date();
-            return this;
-        }
-
-        async getNews(){
+            var $item = $("<li>", { "class": "bwu-nav__item" }),
+                $link = $("<a>", { "class": "bwu-nav__link" }),
+                handler = null, text = null, id = null, children = [];
             
-        }
-    }
-})(window);
+            if ("handler" in item){
+                var h = item.handler;
+                if (typeof h === "function"){
+                    h = this.makeClickFn(h);
+                    $link.attr("href", "#").on("click", h);
+                } else {
+                    $link.attr("href", h);
+                }
+            }
+
+            $item.append($link);
+        };
+    }).call(BWUNavigation.prototype);
+})(this === window ? this : window);
