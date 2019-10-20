@@ -91,3 +91,22 @@ body.katsuragi {
     bottom: 0;
     left: 5px;
 }
+
+#bwu-navigation {
+    display: inline-block;
+    height: inherit;
+    max-height: 80px;
+    position: relative;
+}
+
+#bwu-navigation > #bwu-nav {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+}
+
+#bwu-nav > .bwu-nav__item {
+    height: 100%;
+}
