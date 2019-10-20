@@ -1,8 +1,8 @@
 :root {
     /* Base theme */
     --bwu-theme_background: #30305a;
-    --bwu-theme_header: #543400;
-    --bwu-theme_nav-border: #926622;
+    --bwu-theme_header: #926622;
+    --bwu-theme_nav-border: #543400;
     --bwu-theme_nav-text: #1a1f40;
     --bwu-theme_text: #a3a3a3;
     --bwu-theme_search: #111A2B;
@@ -113,19 +113,52 @@ body.katsuragi {
     display: inline-block;
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 #bwu-nav > .bwu-nav__item > .bwu-nav__link {
     display: inline-block;
-    padding: 8px 14px;
+    padding: 25px 20px;
     font-weight: bold;
     color: var(--bwu-theme_nav-text);
     text-decoration: none;
     text-transform: uppercase;
 }
 
-.katsuragi #bwu-nav > #bwu-nav__item > .bwu-nav__link {
+.katsuragi #bwu-nav > .bwu-nav__item > .bwu-nav__link {
     color: var(--katsuragi-theme_nav-text);
 }
 
+#bwu-nav > .bwu-nav__item > .bwu-nav__subnav {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    background: var(--bwu-theme_nav-border);
+}
+
+#bwu-nav > .bwu-nav__item > .bwu-nav__subnav > .bwu-subnav {
+    list-style: none;
+    display: inline-block;
+    width: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+#bwu-nav > .bwu-nav__item > .bwu-nav__subnav > .bwu-subnav > .bwu-subnav__item {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#bwu-nav > .bwu-nav__item > .bwu-nav__subnav > .bwu-subnav > .bwu-subnav__item > .bwu-subnav__link {
+    display: inline-block;
+    padding: 12px 18px;
+    font-weight: bold;
+    color: var(--bwu-theme_background);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.katsuragi #bwu-nav > .bwu-nav__item > .bwu-nav__subnav > .bwu-subnav > .bwu-subnav__item > .bwu-subnav__link {
+    color: var(--katsuragi-theme_background);
+}
