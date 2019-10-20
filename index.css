@@ -118,10 +118,11 @@ body.katsuragi {
 
 #bwu-nav > .bwu-nav__item > .bwu-nav__link {
     display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+    padding: 8px 14px;
     font-weight: bold;
     color: var(--bwu-theme_nav-text);
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 .katsuragi #bwu-nav > #bwu-nav__item > .bwu-nav__link {
