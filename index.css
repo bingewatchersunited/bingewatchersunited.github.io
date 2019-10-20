@@ -7,6 +7,7 @@
     --bwu-theme_text: #a3a3a3;
     --bwu-theme_search: #111A2B;
     --bwu-theme_search-border: #343434;
+    --bwu-theme_search-placeholder: #9a9a9a;
     --bwu-theme_search-text: #bcbcbc;
     --bwu-theme_section: #b87923;
     --bwu-theme_link: #567aff;
@@ -18,6 +19,7 @@
     --katsuragi-theme_text: #e0e0e0;
     --katsuragi-theme_search: #cccccc;
     --katsuragi-theme_search-border: transparent;
+    --katsuragi-theme_search-placeholder: #2f2f2f;
     --katsuragi-theme_search-text: #444444;
     --katsuragi-theme_section: #4c4e7e;
     --katsuragi-theme_link: #cccccc;
@@ -132,7 +134,7 @@ body.katsuragi {
     position: absolute;
     width: 100%;
     left: 0;
-    top: 100%;
+    top: 98%;
     background: var(--bwu-theme_nav-border);
 }
 
@@ -153,13 +155,51 @@ body.katsuragi {
 
 #bwu-nav > .bwu-nav__item > .bwu-nav__subnav > .bwu-subnav > .bwu-subnav__item > .bwu-subnav__link {
     display: inline-block;
-    padding: 12px 18px;
+    padding: 16px 18px;
     font-weight: bold;
-    color: var(--bwu-theme_background);
+    color: var(--bwu-theme_text);
     text-decoration: none;
     text-transform: uppercase;
 }
 
 .katsuragi #bwu-nav > .bwu-nav__item > .bwu-nav__subnav > .bwu-subnav > .bwu-subnav__item > .bwu-subnav__link {
-    color: var(--katsuragi-theme_background);
+    color: var(--katsuragi-theme_text);
+}
+
+#bwu-search {
+    display: inline-block;
+    max-width: 500px;
+}
+
+#bwu-search > #bwu-search__autocomplete {
+    display: none;
+}
+
+#bwu-search > #bwu-search__box {
+    background-color: var(--bwu-theme_search);
+    border-radius: 3px;
+    width: inherit;
+    color: var(--bwu-theme_search-text);
+}
+
+#bwu-search > #bwu-search__box.focused {
+    border: 1px solid var(--bwu-theme_search-border);
+}
+
+#bwu-search > #bwu-search__box > #bwu-search__label,
+#bwu-search > #bwu-search__box > #bwu-search__input {
+    font-size: 12pt;
+    font-feature-settings: "smcp";
+    padding: 6px 10px;
+}
+
+#bwu-search > #bwu-search__box > #bwu-search__input {
+    border: none;
+    background-color: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+#bwu-search > #bwu-search__box > #bwu-search__input:focus {
+    outline: none;
 }
