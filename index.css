@@ -11,6 +11,7 @@
     --bwu-theme_search-text: #bcbcbc;
     --bwu-theme_section: #b87923;
     --bwu-theme_link: #567aff;
+    --bwu-theme_main-content-section: #444465;
     /* Katsuragi */
     --katsuragi-theme_background: #343667;
     --katsuragi-theme_header: #1a1b33;
@@ -169,10 +170,12 @@ body.katsuragi {
 #bwu-search {
     display: inline-block;
     max-width: 500px;
+    position: relative;
 }
 
 #bwu-search > #bwu-search__autocomplete {
     display: none;
+    position: absolute;
 }
 
 #bwu-search > #bwu-search__box {
@@ -202,4 +205,21 @@ body.katsuragi {
 
 #bwu-search > #bwu-search__box > #bwu-search__input:focus {
     outline: none;
+}
+
+#bwu-main__content {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#bwu-main__content-section {
+    background-color: var(--bwu-theme_main-content-section);
+}
+
+#bwu-main__column-left {
+    float: left;
+}
+
+#bwu-main__column-right {
+    float: right;
 }
