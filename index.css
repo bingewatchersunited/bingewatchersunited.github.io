@@ -218,8 +218,10 @@ body.katsuragi {
 
 #bwu-main__column-left {
     float: left;
+    width: 50%;
 }
 
 #bwu-main__column-right {
     float: right;
+    width: 50%;
 }
