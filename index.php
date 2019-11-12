@@ -1,27 +1,38 @@
 <?php
-	$name = "Binge Watchers United";
-	$navigation = (object)[
-		"news" => "News"
-	];
-	$description = "Binge Watchers United is an organization that was created to allow students to show appreciation for television series, films, and streaming services by having fun discussions.";
+	define(NAME, "Binge Watchers United");
+	define(ALIASES, array("BWU", "Television Lovers Club"));
+	define(KEYWORDS, array_merge(ALIASES, (array) NAME));
+	define(VERSION, "1.1.0 beta");
+	define(NAV, (object) array(
+		"Home" => "index.php",
+		"News" => "news.php",
+		"Contact" => "contact.php",
+		"About" => "about.php",
+		"More" => (object) array(
+			"Timer" => "timer.php",
+			"Jeopardy Board" => "jeopardy-board.php"
+		)
+	));
+	define(DESCRIPTION, "${NAME} is an organization geared towards students that need a safe space to show appreciation for television, film, and modern events related to media by attending meetings, participating in fun activities, and of course, having viewings.");
+	define(TITLE, "Welcome to ${NAME} - A Safe Place to Discuss Your Favorite Shows!!!");
 ?>
-<!DOCTYPE HTML>
-<html class="bwu-site clearfix" id="bwu-site">
+<!doctype html>
+<html class="BWUSite" id="BWUSite">
 	<head>
-		<title>Welcome to Binge Watchers United - an organization for people who love streaming!</title>
+		<title><?php echo TITLE; ?></title>
 		<meta charset="UTF-8" />
-		//<![CDATA[
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		//]]>
-		<meta name="keywords" content="Binge Watchers United, bwu, BWU" />
-		<meta name="viewport" content="width=devide-width; initial-scale=1" />
-		<?php if (isset($description)): ?>
-		<meta name="description" content="<?php echo $description; ?>" />
-		<?php endif; ?>
+		<?php
+			$j = implode(", ", KEYWORDS);
+			echo "<meta name=\"keywords\" content=\"${j}\" />";
+			echo "<meta name=\"description\" content=\"${DESCRIPTION}\" />";
+		?>
 		<link rel="stylesheet" href="index.css" type="text/css" />
-		<script src="index.js" type="text/javascript"></script>
+		<link rel="manifest" href="manifest.json" type="text/json" />
+		<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+		<script src="index.js"></script>
+		<script src="main.js"></script>
 	</head>
-	<body class="bwu-content" id="bwu-content">
-		<h1><?php echo $name; ?></h1>
+	<body class="BWUContent" id="BWUContent">
+		Hello World
 	</body>
 </html>
