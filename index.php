@@ -1,4 +1,7 @@
 <?php
+	include "news/news.php";
+	include "";
+	
 	define(NAME, "Binge Watchers United");
 	define(ALIASES, array("BWU", "Television Lovers Club"));
 	define(KEYWORDS, array_merge(ALIASES, (array) NAME));
@@ -13,9 +16,9 @@
 			"Jeopardy Board" => "jeopardy-board.php"
 		)
 	));
+	define(DESCRIPTION, "${name} is an organization geared towards students that need a safe space to show appreciation for television, film, and modern events related to media by attending meetings, participating in fun activities, and of course, having viewings.");
 	$desc = constant("DESCRIPTION");
 	$name = constant("NAME");
-	define(DESCRIPTION, "${desc} is an organization geared towards students that need a safe space to show appreciation for television, film, and modern events related to media by attending meetings, participating in fun activities, and of course, having viewings.");
 	define(TITLE, "Welcome to ${name} - A Safe Place to Discuss Your Favorite Shows!!!");
 ?>
 <!doctype html>
@@ -46,8 +49,103 @@
 						</span>
 					</a>
 				</h1>
-				<nav class="BWUNavigation" id="BWUNavigation"></nav>
+				<nav class="BWUNavigation bwu-navigation" id="BWUNavigation">
+					<ul class="BWUNav bwu-nav" id="BWUNav">
+						<?php 
+							foreach (NAV as $t => $a){
+								if (!isset($a) OR !isset($t)) continue;
+
+								if ($a === "" OR $t === "") continue;
+
+								echo "<li class=\"BWUNavItem bwu-nav__item\">";
+								
+								if (is_object($a) OR is_array($a)){
+									$link = "#";
+
+									if (isset($a["__link"])){
+										$ol = $link;
+										$link = $a["__link"];
+
+										if ($link === "" OR !isset($link) OR !is_string($link)){
+											$link = $ol;
+										}
+
+										unset($ol, $a["__link"]);
+									}
+
+									echo "<a href=\"${link}\" class=\"BWUNavLink bwu-nav__link\">${t}</a>";
+									echo "<section class=\"BWUNavSubnav bwu-nav__subnav\"><ul class=\"BWUSubnav bwu-subnav\">";
+
+									foreach ($a as $k => $v){
+
+										if (!isset($k) OR !isset($v)) continue;
+
+										if ($v === "" OR $k === "") continue;
+
+										echo "<li class=\"BWUSubnavItem bwu-subnav__item\">";
+
+										if (is_object($v) OR is_array($v)){
+											$l = "#";
+
+											if (isset($v["__link"])){
+												$olink = $l;
+												$l = $v["__link"];
+
+												if ($l === "" OR !isset($l) OR !is_string($l)){
+													$l = $olink;
+												}
+
+												unset($olink, $v["__link"]);
+											}
+
+											echo "<a href=\"${l}\" class=\"BWUSubnavLink bwu-subnav__link\">${k}</a>";
+											echo "<section class=\"BWUNavSubnav2 bwu-nav__subnav2\"><ul class=\"BWUSubnav2 bwu-subnav2\">";
+
+											foreach ($v as $key => $value){
+												if (!isset($value) OR !isset($key)) continue;
+
+												if ($value === "" OR $key === "") continue;
+
+												echo "<li class=\"BWUSubnav2Item bwu-subnav2__item\">";
+												
+												if (!is_string($value)){
+													$value = "#";
+												}
+
+												echo "<a href=\"${value}\" class=\"BWUSubnav2Link bwu-subnav2__link\">${key}</a>";
+												echo "</li>";
+
+												unset($value);
+											}
+
+											echo "</ul></section>";
+										} else {
+											if (!is_string($v)){
+												$v = "#";
+											}
+
+											echo "<a href=\"${v}\" class=\"BWUSubnavLink bwu-subnav__link\">${k}</a>";
+										}
+
+										echo "</li>";
+										unset($v);
+									}
+
+									echo "</ul></section>";
+								} else {
+									if (!is_string($a)){
+										$a = "#";
+									}
+
+									echo "<a href=\"${a}\" class=\"BWUNavLink bwu-nav__link\">${t}</a>";
+								}
+
+								unset($a);
+							}
+						?>
+					</ul>
+				</nav>
 			</header>
 		</div>
 	</body>
-</html>4
+</html>
