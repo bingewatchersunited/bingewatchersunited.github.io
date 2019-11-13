@@ -19,6 +19,7 @@
 	define(DESCRIPTION, "${name} is an organization geared towards students that need a safe space to show appreciation for television, film, and modern events related to media by attending meetings, participating in fun activities, and of course, having viewings.");
 	$desc = constant("DESCRIPTION");
 	$name = constant("NAME");
+	$nav = constant("NAV");
 	define(TITLE, "Welcome to ${name} - A Safe Place to Discuss Your Favorite Shows!!!");
 ?>
 <!doctype html>
@@ -52,7 +53,7 @@
 				<nav class="BWUNavigation bwu-navigation" id="BWUNavigation">
 					<ul class="BWUNav bwu-nav" id="BWUNav">
 						<?php 
-							foreach (NAV as $t => $a){
+							foreach ($nav as $t => $a){
 								if (!isset($a) OR !isset($t)) continue;
 
 								if ($a === "" OR $t === "") continue;
