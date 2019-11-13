@@ -6,21 +6,20 @@
 	define(ALIASES, array("BWU", "Television Lovers Club"));
 	define(KEYWORDS, array_merge(ALIASES, (array) NAME));
 	define(VERSION, "1.1.0 beta");
-	define(NAV, (object) array(
+	define(DESCRIPTION, "${name} is an organization geared towards students that need a safe space to show appreciation for television, film, and modern events related to media by attending meetings, participating in fun activities, and of course, having viewings.");
+	define(TITLE, "Welcome to ${name} - A Safe Place to Discuss Your Favorite Shows!!!");
+	$desc = constant("DESCRIPTION");
+	$name = constant("NAME");
+	$nav = [
 		"Home" => "index.php",
 		"News" => "news.php",
 		"Contact" => "contact.php",
 		"About" => "about.php",
-		"More" => (object) array(
+		"More" => [
 			"Timer" => "timer.php",
 			"Jeopardy Board" => "jeopardy-board.php"
-		)
-	));
-	define(DESCRIPTION, "${name} is an organization geared towards students that need a safe space to show appreciation for television, film, and modern events related to media by attending meetings, participating in fun activities, and of course, having viewings.");
-	$desc = constant("DESCRIPTION");
-	$name = constant("NAME");
-	$nav = constant("NAV");
-	define(TITLE, "Welcome to ${name} - A Safe Place to Discuss Your Favorite Shows!!!");
+		]
+	];
 ?>
 <!doctype html>
 <html class="BWUSite" id="BWUSite">
@@ -54,20 +53,20 @@
 					<ul class="BWUNav bwu-nav" id="BWUNav">
 						<?php 
 							foreach ($nav as $t => $a){
-								if (!isset($a) OR !isset($t)) continue;
+								if (!isset($a) || !isset($t)) continue;
 
-								if ($a === "" OR $t === "") continue;
+								if ($a === "" || $t === "") continue;
 
 								echo "<li class=\"BWUNavItem bwu-nav__item\">";
 								
-								if (is_object($a) OR is_array($a)){
+								if (is_object($a) || is_array($a)){
 									$link = "#";
 
 									if (isset($a["__link"])){
 										$ol = $link;
 										$link = $a["__link"];
 
-										if ($link === "" OR !isset($link) OR !is_string($link)){
+										if ($link === "" || !isset($link) || !is_string($link)){
 											$link = $ol;
 										}
 
@@ -79,20 +78,20 @@
 
 									foreach ($a as $k => $v){
 
-										if (!isset($k) OR !isset($v)) continue;
+										if (!isset($k) || !isset($v)) continue;
 
-										if ($v === "" OR $k === "") continue;
+										if ($v === "" || $k === "") continue;
 
 										echo "<li class=\"BWUSubnavItem bwu-subnav__item\">";
 
-										if (is_object($v) OR is_array($v)){
+										if (is_object($v) || is_array($v)){
 											$l = "#";
 
 											if (isset($v["__link"])){
 												$olink = $l;
 												$l = $v["__link"];
 
-												if ($l === "" OR !isset($l) OR !is_string($l)){
+												if ($l === "" || !isset($l) || !is_string($l)){
 													$l = $olink;
 												}
 
@@ -103,9 +102,9 @@
 											echo "<section class=\"BWUNavSubnav2 bwu-nav__subnav2\"><ul class=\"BWUSubnav2 bwu-subnav2\">";
 
 											foreach ($v as $key => $value){
-												if (!isset($value) OR !isset($key)) continue;
+												if (!isset($value) || !isset($key)) continue;
 
-												if ($value === "" OR $key === "") continue;
+												if ($value === "" || $key === "") continue;
 
 												echo "<li class=\"BWUSubnav2Item bwu-subnav2__item\">";
 												
