@@ -1,0 +1,35 @@
+:root {
+    --base__font: Montserrat, "Trebuchet MS", Helvetica, Arial, sans-serif;
+    --body__background: #453333;
+    --content__text: #dfdfdf;
+}
+
+body.bwu-body {
+    background-color: var(--body__background);
+    font-family: var(--base__font);
+    position: relative;
+}
+
+.bwu-content__wrapper {
+    position: fixed;
+    text-align: center;
+}
+
+.bwu-content__wrapper {
+    padding: 8px;
+}
+
+.bwu-logo {
+    text-align: center;
+}
+
+.bwu-logo > * {
+    width: 150px;
+    height: 150px;
+}
+
+.bwu-indicator {
+    text-align: center;
+    font-size: 16pt;
+    padding: 4px 8px;
+}
