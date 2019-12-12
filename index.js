@@ -63,7 +63,7 @@ window.BWU = {};
         return spinner;
     };
 
-    BWU.LOADING_TIME /* (in seconds) */ = 15;
+    BWU.LOADING_TIME /* (in seconds) */ = 18;
     BWU.PROGRESS_INTERVAL = null;
 
     BWU.progress = function(spinner, time){
@@ -75,6 +75,10 @@ window.BWU = {};
             percent = Math.round((index * step) * 100);
             percent = (n => n < 10 ? "0" + n : String(n))(percent);
 
+            if (Number(percent) > 100) percent = "100";
+
+            BWU.updateSpinner(spinner, percent);
+
             if (percent === "100"){
                 clearInterval(BWU.PROGRESS_INTERVAL);
                 BWU.PROGRESS_INTERVAL = null;
@@ -82,8 +86,6 @@ window.BWU = {};
                 BWU.loaded();
                 return;
             }
-
-            BWU.updateSpinner(spinner, percent);
 
             index++;
         }, 1000);
