@@ -19,10 +19,10 @@ window.BWU = {};
         let width = size[0], height = size[1];
 
         let spinner = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        spinner.viewBox = "0 0 80 80";
-        spinner.id = "loading-spinner";
-        spinner.width = width;
-        spinner.height = height;
+        spinner.setAttribute("viewBox", "0 0 80 80");
+        spinner.setAttribute("id", "loading-spinner");
+        spinner.setAttribute("width", width || 40);
+        spinner.setAttribute("height", height || 40);
         spinner.setAttribute("version", "1.1");
         spinner.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
         spinner.setAttribute("preserveAspectRatio", "xMinYMin meet");
@@ -52,7 +52,8 @@ window.BWU = {};
         text.setAttribute("dominant-baseline", "middle");
         text.setAttribute("text-anchor", "middle");
         text.setAttribute("font-family", "Montserrat, Helvetical, Arial, sans-serif");
-        text.setAttribute("font-size", "4px");
+        text.setAttribute("font-size", "10pt");
+        text.setAttribute("font-weight", "bold");
         text.textContent = 0;
 
         path.appendChild(animation);
