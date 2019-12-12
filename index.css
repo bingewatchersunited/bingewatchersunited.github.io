@@ -2,6 +2,7 @@
     --base__font: Montserrat, "Trebuchet MS", Helvetica, Arial, sans-serif;
     --body__background: #333340;
     --content__text: #dfdfdf;
+    --logo__size: 300px;
 }
 
 body.bwu-body {
@@ -34,8 +35,8 @@ body.bwu-body {
 }
 
 .bwu-logo > * {
-    width: 150px;
-    height: 150px;
+    width: var(--logo__size);
+    height: var(--logo__size);
 }
 
 .bwu-indicator {
