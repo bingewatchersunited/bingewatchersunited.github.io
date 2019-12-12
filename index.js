@@ -25,6 +25,7 @@ window.BWU = {};
         spinner.height = height;
         spinner.setAttribute("version", "1.1");
         spinner.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
+        spinner.setAttribute("preserveAspectRatio", "xMinyMin meet");
 
         let pathData = `M40,72C22.4,72,8,57.6,8,40C8,22.4,
             22.4,8,40,8c17.6,0,32,14.4,32,32c0,1.1-0.9,2-2,2
@@ -44,8 +45,17 @@ window.BWU = {};
         animation.setAttribute("dur", "0.6s");
         animation.setAttribute("repeatCount", "indefinite");
 
+        let text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.id = "loading-spinner__text";
+        text.x = 30;
+        text.y = 37;
+        text.setAttribute("font-family", "Montserrat, Helvetical, Arial, sans-serif");
+        text.setAttribute("font-size", "4px");
+        text.textContent = 0;
+
         path.appendChild(animation);
         spinner.appendChild(path);
+        spinner.appendChild(text);
 
         return spinner;
     };
