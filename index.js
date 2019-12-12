@@ -100,12 +100,16 @@ window.BWU = {};
     };
 
     if (window.location.pathname === "/"){
-        var Spinner = BWU.createSpinner(100),
-            Indicator = document.querySelector(".bwu-indicator");
-        
-        Indicator.innerHTML = Spinner.outerHTML;
-        var spinner = Indicator.querySelector("#loading-spinner");
+        let int = setTimeout(() => {
+            clearTimeout(int);
+            int = void 0;
+            var Spinner = BWU.createSpinner(100),
+                Indicator = document.querySelector(".bwu-indicator");
+            
+            Indicator.innerHTML = Spinner.outerHTML;
+            var spinner = Indicator.querySelector("#loading-spinner");
 
-        BWU.progress(spinner);
+            BWU.progress(spinner);
+        }, 1500);
     }
 })(this === window ? this : window, window.BWU);
