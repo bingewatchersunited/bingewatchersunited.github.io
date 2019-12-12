@@ -8,7 +8,7 @@ window.BWU = {};
 
         var isArr = Array.isArray(size) && size.every((s) => isValid(s));
 
-        if (!isValid || !isArr) size = [40, 40];
+        if (!isValid(size) || !isArr) size = [40, 40];
         else if (typeof size === "string") size = size.split("x").map(Number).filter(n => !isNaN(n));
         else if (typeof size === "number") size = [size, size].filter(n => !isNaN(n));
         else if (isArr) size = size.map(Number).filter(n => !isNaN(n));
@@ -103,7 +103,7 @@ window.BWU = {};
         let int = setTimeout(() => {
             clearTimeout(int);
             int = void 0;
-            var Spinner = BWU.createSpinner(100),
+            var Spinner = BWU.createSpinner("100x100"),
                 Indicator = document.querySelector(".bwu-indicator");
             
             Indicator.innerHTML = Spinner.outerHTML;
