@@ -1,21 +1,31 @@
 :root {
     --base__font: Montserrat, "Trebuchet MS", Helvetica, Arial, sans-serif;
-    --body__background: #453333;
+    --body__background: #333340;
     --content__text: #dfdfdf;
 }
 
 body.bwu-body {
     background-color: var(--body__background);
     font-family: var(--base__font);
+    color: var(--content__text);
     position: relative;
 }
 
 .bwu-content__wrapper {
     position: fixed;
     text-align: center;
+    left: 50%;
+    top: 50%;
+    display: inline-block;
+    max-width: 700px;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
-.bwu-content__wrapper {
+.bwu-logo__wrapper {
     padding: 8px;
 }
 
