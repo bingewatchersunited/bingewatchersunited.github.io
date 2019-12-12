@@ -48,7 +48,7 @@ window.BWU = {};
         let text = document.createElementNS("http://www.w3.org/2000/svg", "text");
         text.id = "loading-spinner__text";
         text.setAttribute("x", "50%");
-        text.setAttribute("y", "50%");
+        text.setAttribute("y", "52%");
         text.setAttribute("dominant-baseline", "middle");
         text.setAttribute("text-anchor", "middle");
         text.setAttribute("font-family", "Montserrat, Helvetical, Arial, sans-serif");
@@ -62,4 +62,50 @@ window.BWU = {};
 
         return spinner;
     };
+
+    BWU.LOADING_TIME /* (in seconds) */ = 15;
+    BWU.PROGRESS_INTERVAL = null;
+
+    BWU.progress = function(spinner, time){
+        if (typeof time !== "number") time = BWU.LOADING_TIME;
+        var index = 1, step = 1 / time,
+            percent;
+
+        BWU.PROGRESS_INTERVAL = setInterval(() => {
+            percent = Math.round((index * step) * 100);
+            percent = (n => n < 10 ? "0" + n : String(n))(percent);
+
+            if (percent === "100"){
+                clearInterval(BWU.PROGRESS_INTERVAL);
+                BWU.PROGRESS_INTERVAL = null;
+
+                BWU.loaded();
+                return;
+            }
+
+            BWU.updateSpinner(spinner, percent);
+
+            index++;
+        }, 1000);
+    };
+
+    BWU.updateSpinner = function(spinner, percent){
+        if (!(Object(spinner) instanceof SVGElement))
+            spinner = document.getElementById("loading-spinner");
+        Array.from(spinner.children).forEach(child => {
+            if (child.getAttribute("id") === "loading-spinner__text"){
+                child.textContent = percent;
+            }
+        });
+    };
+
+    if (window.location.pathname === "/"){
+        var Spinner = BWU.createSpinner(100),
+            Indicator = document.querySelector(".bwu-indicator");
+        
+        Indicator.innerHTML = Spinner.outerHTML;
+        var spinner = Indicator.querySelector("#loading-spinner");
+
+        BWU.progress(spinner);
+    }
 })(this === window ? this : window, window.BWU);
