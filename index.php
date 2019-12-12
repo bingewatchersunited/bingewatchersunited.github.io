@@ -14,8 +14,8 @@
 <!doctype html>
 <html class="BWUDocument bwu-document" id="bwu-document">
 	<head id="bwu-head">
-		<?php echo `<title>$title</title>`; ?>
-		<?php echo `<meta name="description" content="$desc" />`; ?>
+		<?php echo "<title>" . $title . "</title>"; ?>
+		<?php echo '<meta name="description" content="' . $desc . '" />'; ?>
 		<meta charset="UTF-8" />
 		<meta name="keywords" content="BWU, Binge Watchers United, binge watchers united, Television and Streaming Club" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
