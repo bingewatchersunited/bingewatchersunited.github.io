@@ -2,9 +2,7 @@ window.BWU = {};
 
 (function(window, BWU, undefined){
     BWU.createSpinner = function(size){
-        function isValid(any){
-            return ["string", "number"].indexOf(any) > -1;
-        }
+        let isValid = any => ["string", "number"].indexOf(typeof any) > -1;
 
         var isArr = Array.isArray(size) && size.every((s) => isValid(s));
 
